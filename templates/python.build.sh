@@ -12,6 +12,10 @@ build() {
 	python setup.py build
 }
 
+backup() {
+	return
+}
+
 package() {
 	cd $pkgname-$pkgver
 	python setup.py install --root=$pkgdir --skip-build

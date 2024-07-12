@@ -18,6 +18,10 @@ build() {
 	cargo build --release --locked --all-features
 }
 
+backup() {
+	return
+}
+
 package() {
 	cd $pkgname-$pkgver
 	install -Dm755 target/release/$pkgname $pkgdir/usr/bin/$pkgname

@@ -12,6 +12,10 @@ build() {
 	go build -o build
 }
 
+backup() {
+	return
+}
+
 package() {
 	cd $pkgname-$pkgver
 	install -Dm755 build/$pkgname $pkgdir/usr/bin/$pkgname
