@@ -16,11 +16,8 @@ folder you need to `cd` and:
 <details>
    <summary>Maintain Repo Manually</summary>
 1. run ``Iglupkg fbp``
-	    
 2. copy xbps package from out to your repo dir
-
 3. create repository: ``xbps-rindex -fa /path/to/dir/*.xbps``
-
 4. sign repository: ``xbps-rindex --sign --signedby 'Igluser <iglu@iglunix.org>' --privkey <your RSA key> /path/to/dir/``
 </details>
 
