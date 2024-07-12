@@ -15,10 +15,10 @@ folder you need to `cd` and:
 	
 <details>
    <summary>Maintain Repo Manually</summary>
-	    - run ``Iglupkg fbp``
-	    - copy xbps package from out to your repo dir
-	    - create repository: ``xbps-rindex -fa /path/to/dir/*.xbps``
-	    - sign repository: ``xbps-rindex --sign --signedby 'Igluser <iglu@iglunix.org>' --privkey <your RSA key> /path/to/dir/``
+	    1. run ``Iglupkg fbp``
+	    2. copy xbps package from out to your repo dir
+	    3. create repository: ``xbps-rindex -fa /path/to/dir/*.xbps``
+	    4. sign repository: ``xbps-rindex --sign --signedby 'Igluser <iglu@iglunix.org>' --privkey <your RSA key> /path/to/dir/``
 </details>
 
 or, run local-iglu from anoraktrend/local-iglu in the package folder to simplify the process of making a local repo. 
