@@ -9,7 +9,7 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgdate-$pkgver
-	./configure \
+	./configure CFLAGS="-I/usr/bad/ncurses/include -include stdc-predef.h" LDFLAGS="-L/usr/bad/ncurses/libs" \
 		--prefix=/usr \
 		--sysconfdir=/etc \
 		--build=$TRIPLE \
@@ -28,6 +28,5 @@ backup () {
 
 license() {
 	cd $pkgname-$pkgdate-$pkgver
-	cat LICENSE
-#	cat COPYING
+	cat COPYING
 }
