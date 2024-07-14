@@ -1,5 +1,7 @@
 pkgname=rnp
 pkgver=0.17.1
+mkdeps="attr:acl:json-c:bzip2:botan"
+deps="libcxx:libunwind:musl"
 
 fetch() {
 	curl "https://github.com/rnpgp/rnp/releases/download/v0.17.1/rnp-v0.17.1.tar.gz" -LJo $pkgname-$pkgver.tar.gz
