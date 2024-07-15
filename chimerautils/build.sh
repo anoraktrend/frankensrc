@@ -1,5 +1,6 @@
 pkgname=chimerautils
 pkgver=14.0.7
+NCURSES=/usr/bad/ncurses
 
 fetch() {
 	curl -LJ "https://github.com/chimera-linux/chimerautils/archive/refs/tags/v14.0.7.tar.gz" -o $pkgname-$pkgver.tar.gz
@@ -9,17 +10,22 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgver
-	muon setup \ 
+	PATH="$PATH:$NCURSES/bin" \
+	CFLAGS="$CFLAGS -I$NCURSES/include -I$NCURSES/include/ncursesw" \
+	LDFLAGS="$LDFLAGS -L$NCURSES/lib" \
+	meson setup \
+		-Dfts_path=/usr/lib \
+		-Drpmatch_path=/usr/lib \
 		-Dbuildtype=release \
 		-Dprefix=/usr \
 		-Dlibexecdir=lib \
 		build
-	samu -C
+	samu -C build
 }
 
 package() {
 	cd $pkgname-$pkgver
-	DESTDIR=$pkgdir muon -C build install
+	DESTDIR=$pkgdir meson install -C build
 }
 
 license() {

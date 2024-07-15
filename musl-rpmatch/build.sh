@@ -1,5 +1,5 @@
-pkgname=musl-fts
-pkgver=1.2.7
+pkgname=musl-rpmatch
+pkgver=1.0
 mkdeps="bmake"
 deps="libcxx:libunwind:musl"
 
