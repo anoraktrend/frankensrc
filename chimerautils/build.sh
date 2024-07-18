@@ -13,6 +13,7 @@ build() {
 	PATH="$PATH:$NCURSES/bin" \
 	CFLAGS="$CFLAGS -I$NCURSES/include -I$NCURSES/include/ncursesw" \
 	LDFLAGS="$LDFLAGS -L$NCURSES/lib" \
+	pip3 install meson
 	meson setup \
 		-Dfts_path=/usr/lib \
 		-Drpmatch_path=/usr/lib \
