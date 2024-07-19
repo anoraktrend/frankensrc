@@ -1,10 +1,10 @@
 The Berkeley Artistic License
 Project: FrankenSRC
-Project developer: Anoraktrend AKA Lucy Ada Randall
+Project Developer: Anoraktrend AKA Lucy Ada Randall
 Contributors: Ella Stanforth; Contributers to Iglunix; Lucy Ada Randall.
 Standard Version: The project which is the basis for modified versions, also known as upstream.
 Modified Versions: versions of the source code distributed by the project that have been modified, which can be distributed as executables.
-Software refers to the project, which is a collection of files distributed by the Project Developer, the "Standard Version", and derivatives of that collection of files created through textual modification, the "Modified Version". 
+Software: the project, a collection of files distributed by the Project Developer, the "Standard Version", and derivatives of that collection of files created through textual modification, the "Modified Version". 
 
 1. You may make and give away verbatim copies of the source form of the Standard Version of this Software without restriction, provided that you duplicate all of the original copyright notices, this license, and associated disclaimers.
 
