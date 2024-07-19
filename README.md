@@ -14,7 +14,7 @@ openssl or ssh-keygen  FrankenSRC's iglus are all in one folder, so switch into 
 folder you need to `cd` and:
 	
 <details>
-   <summary>Maintain Repo Manually</summary>
+   <summary>Maintain a local repository</summary>
 
 1. run ``Iglupkg fbp``
 2. copy xbps package from out to your repo dir
@@ -22,4 +22,4 @@ folder you need to `cd` and:
 4. sign repository: ``xbps-rindex --sign --signedby 'Igluser <iglu@iglunix.org>' --privkey <your RSA key> /path/to/dir/``
 </details>
 
-or, run local-iglu from anoraktrend/local-iglu in the package folder to simplify the process of making a local repo. 
+or, run iglu add out/*.xbps in the package folder to simply install the package right away. 
