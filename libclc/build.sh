@@ -1,5 +1,5 @@
 pkgver=18.1.8
-pkgname=llvm-libs
+pkgname=libclc
 mkdeps="openssl:cmake:samurai:python:"
 deps=
 bad=""
@@ -24,23 +24,12 @@ build() {
 
 	mkdir -p build
 	cd build
-	cmake -G Ninja -Wno-dev \
-		-DLLVM_ENABLE_PROJECTS="libclc" \
-		-DLLVM_ENABLE_RUNTIMES="openmp;libcxx;libcxxabi;libunwind" \
-		-DLIBUNWIND_USE_COMPILER_RT=ON \
-		-DLIBUNWIND_SUPPORTS_FNO_EXCEPTIONS_FLAG=1 \
-		-DLIBCXXABI_USE_LLVM_UNWINDER=YES \
-		-DLIBCXX_HAS_MUSL_LIBC=ON \
-		-DCMAKE_ASM_COMPILER=$CC \
-		-DCMAKE_C_COMPILER=$CC \
-		-DCMAKE_CXX_COMPILER=$CXX \
+	cmake -G Ninja -DCMAKE_BUILD_TYPE=Release \
+		-DLLVM_ENABLE_PROJECTS=libclc \
 		-DCMAKE_ASM_COMPILER_TARGET=$ARCH-linux-musl \
 		-DCMAKE_C_COMPILER_TARGET=$ARCH-linux-musl \
 		-DCMAKE_CXX_COMPILER_TARGET=$ARCH-linux-musl \
-		-DCMAKE_C_FLAGS="$CFLAGS" \
-		-DCMAKE_CXX_FLAGS="$CXXFLAGS" \
-		-DCMAKE_ASM_FLAGS="$CFLAGS" \
-		-DCMAKE_SHARED_LINKER_FLAGS="$LDFLAGS -unwindlib=none" \
+		-DCMAKE_SHARED_LINKER_FLAGS="$LDFLAGS" \
 		$cmake_extra_flags \
 		-DCMAKE_INSTALL_PREFIX=$PREFIX \
 		-DCMAKE_C_COMPILER_WORKS=1 \
@@ -48,9 +37,9 @@ build() {
 		-DCMAKE_SKIP_BUILD_RPATH=0 \
 		-DCMAKE_BUILD_WITH_INSTALL_RPATH=1 \
 		-DCMAKE_INSTALL_RPATH='${ORIGIN}/../lib' \
-		../runtimes
+		../llvm
 
-	samu -j$JOBS
+	samu libclc
 }
 
 package() {
