@@ -9,17 +9,23 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgdate-$pkgver
-	./configure CFLAGS="-I/usr/bad/ncurses/include -include stdc-predef.h" LDFLAGS="-L/usr/bad/ncurses/libs" \
+	./configure CFLAGS="-D__STDC_ISO_10646__=201103L" \
 		--prefix=/usr \
 		--sysconfdir=/etc \
-		--build=$TRIPLE \
+                --disable-silent-install \
+		--build=$HOST_TRIPLE \
 		--host=$TRIPLE
-	make 
+	make -j1
 }
 
 package() {
 	cd $pkgname-$pkgdate-$pkgver
 	make install DESTDIR=$pkgdir
+	incdir="$pkgdir/usr/include"
+	libdir="$pkgdir/usr/lib"
+	ln -s $incdir/editline $incdir/readline
+	ln -s $incdir/editline/readline.h $incdir/editline/history.h
+	ln -s $libdir/libedit.so.0.0.73 $libdir/libreadline.so
 }
 
 backup () {

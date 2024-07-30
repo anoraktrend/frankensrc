@@ -10,7 +10,10 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgver
-	CFLAGS="$CFLAGS -Wno-pointer-sign -DNO_CATGETS --static -DHAS_NCURSES -I /usr/bad/ncurses/include/ -L/usr/bad/ncurses/lib -lncursesw" \
+	CFLAGS="$CFLAGS -Wno-pointer-sign \
+	 -Wno-deprecated-non-prototype \
+	-Wno-format-security \
+	-DNO_CATGETS -DHAS_NCURSES -lncursesw" \
 	make
 }
 

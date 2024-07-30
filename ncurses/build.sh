@@ -14,14 +14,23 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgver
-	MAKE="bad --gmake gmake" ./configure CFLAGS="$CFLAGS -fPIC" \
-		--prefix=/usr/bad/$pkgname \
+        MAKE="bad --gmake gmake" ./configure CFLAGS="$CFLAGS" \
+		--prefix=/usr/ \
+		--libexecdir=/usr/lib/ \
 		--build=$HOST_TRIPLE \
-                --with-shared \
-                --without-debug \
-                --with-normal \
-                --with-cxx-shared \
-                --enable-pc-files \
+		--with-shared \
+		--without-debug \
+		--with-normal \
+		--enable-overwrite \
+		--with-cxx-shared \
+		--with-cxx-binding \
+		--disable-stripping \
+		--without-ada \
+		--without-tests \
+		--with-xterm-kbs=del \
+		--enable-ext-colors \
+		--enable-pc-files \
+		--enable-widec \
 		--host=$TRIPLE
 	bad --gmake gmake
 }

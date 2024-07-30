@@ -1,16 +1,20 @@
-pkgname=yasm
-pkgver=1.3.0
+pkgname=jq
+pkgver=1.7.1
+compg=gz
 
 fetch() {
-	curl "http://www.tortall.net/projects/yasm/releases/$pkgname-$pkgver.tar.gz" -o $pkgname-$pkgver.tar.gz
-	tar -xf $pkgname-$pkgver.tar.gz
+	curl "https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-1.7.1.tar.gz" -LJo $pkgname-$pkgver.tar.$comp
+	tar -xf $pkgname-$pkgver.tar.$comp
 }
 
 build() {
 	cd $pkgname-$pkgver
 	./configure \
 		--prefix=/usr \
+		--libexecdir=/usr/lib/ \
 		--sysconfdir=/etc \
+		--build=$TRIPLE \
+		--host=$TRIPLE
 
 	make
 }

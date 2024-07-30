@@ -1,10 +1,12 @@
-pkgname=libical
-pkgver=3.0.18
+pkgname=libuv
+pkgver=1.48.0
 pkgrel=0
+desc="A multi-platform support lib, with a focus on async I/O."
+comp=gz
 
 fetch() {
-	curl "https://github.com/libical/libical/releases/download/v3.0.18/libical-3.0.18.tar.gz" -LJo $pkgname-$pkgver.tar.gz
-	tar -xf $pkgname-$pkgver.tar.gz
+	curl "https://github.com/libuv/libuv/archive/refs/tags/v1.48.0.tar.gz" -LJo $pkgname-$pkgver.tar.$comp
+	tar -xf $pkgname-$pkgver.tar.$comp
 	mkdir $pkgname-$pkgver/build
 }
 
@@ -13,7 +15,6 @@ build() {
 	cd build
 	cmake -G Ninja ../ \
 		-DCMAKE_BUILD_TYPE=Release \
-		-DENABLE_GTK_DOC=OFF \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_INSTALL_LIBDIR=lib
 	samu
@@ -31,6 +32,6 @@ package() {
 
 license() {
 	cd $pkgname-$pkgver
-	cat LICENSE
+	cat LICENSE*
 #	cat COPYING
 }

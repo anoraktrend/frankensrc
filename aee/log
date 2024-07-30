@@ -1,0 +1,85 @@
+--- aee.o ---
+--- control.o ---
+--- format.o ---
+--- localize.o ---
+--- srch_rep.o ---
+--- delete.o ---
+--- mark.o ---
+--- motion.o ---
+--- keys.o ---
+--- help.o ---
+--- windows.o ---
+--- journal.o ---
+--- file.o ---
+--- aee.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c aee.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- control.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c control.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- format.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c format.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- localize.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c localize.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- srch_rep.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c srch_rep.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- delete.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c delete.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- mark.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c mark.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- motion.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c motion.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- keys.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c keys.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- help.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c help.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- windows.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c windows.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- journal.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c journal.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- file.o ---
+clang -DSYS5 -DBSD_SELECT -DNO_CATGETS -DHAS_NCURSES -DHAS_UNISTD  -DHAS_STDLIB -DHAS_CTYPE -DHAS_SYS_IOCTL -DHAS_SYS_WAIT -DHAS_UNISTD -DHAS_STDARG -DHAS_STDLIB -DHAS_SYS_WAIT -DSLCT_HDR -c file.c -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw
+--- aee.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- control.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- format.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- localize.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- srch_rep.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- delete.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- mark.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- motion.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- windows.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- journal.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- file.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- keys.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- help.o ---
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -lncursesw: 'linker' input unused [-Wunused-command-line-argument]
+--- aee.o ---
+aee.c:1550:23: warning: multi-character character constant [-Wmultichar]
+ 1550 |         temp_buf->journ_fd = '-1';
+      |                              ^
+1 warning generated.
+--- ncurses ---
+clang -o aee aee.o control.o format.o localize.o srch_rep.o delete.o mark.o motion.o keys.o help.o windows.o journal.o file.o -O3 -Wno-pointer-sign -Wno-deprecated-non-prototype -Wno-format-security -DNO_CATGETS  -DHAS_NCURSES -I /usr/bad/include/ncursesw -lncursesw -O2 -march=native -mtune=native -flto -fcommon -lncursesw  -s

@@ -1,6 +1,8 @@
 pkgname=chimerautils
 pkgver=14.0.7
-NCURSES=/usr/bad/ncurses
+mkdeps="meson:samurai:flex:musl-fts:musl-rpmatch:byacc:libxo:ncurses:libedit:libbsd:libcrypto"
+deps="musl-fts:musl-rpmatch:libxo:ncurses:libedit:libbsd:openssl"
+desc="ChimeraUtils are a coreutils replacement using freebsd's core utilities, forked from bsdutils"
 
 fetch() {
 	curl -LJ "https://github.com/chimera-linux/chimerautils/archive/refs/tags/v14.0.7.tar.gz" -o $pkgname-$pkgver.tar.gz
@@ -10,10 +12,8 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgver
-	PATH="$PATH:$NCURSES/bin" \
-	CFLAGS="$CFLAGS -I$NCURSES/include -I$NCURSES/include/ncursesw" \
-	LDFLAGS="$LDFLAGS -L$NCURSES/lib" \
-	pip3 install meson
+	CFLAGS="$CFLAGS" \
+	LDFLAGS="$LDFLAGS" \
 	meson setup \
 		-Dfts_path=/usr/lib \
 		-Drpmatch_path=/usr/lib \
