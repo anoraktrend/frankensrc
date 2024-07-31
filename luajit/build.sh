@@ -1,22 +1,24 @@
 pkgname=luajit
 pkgver=2.1
-pkgrel=20230410
+pkgrel=20240410
 DESC="LuaJIT is a ROLLING RELEASE the date after the version is the day the the version was fetched"
 
 fetch() {
-	curl "https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20230410.1.tar.gz" -LJo $pkgname-$pkgver.tar.gz
-	tar -xf $pkgname-$pkgver.tar.gz
-	mv luajit2-2.1-20230410.1 $pkgname-$pkgver
+	git clone "https://luajit.org/git/luajit.git" $pkgname-$pkgver
 }
 
 build() {
 	cd $pkgname-$pkgver
-	echo "run: make -j1 CFLAGS="" CC=clang PREFIX=/usr\nin the dir yourself"
+	bad --gmake gmake amalg CC=cc CFLAGS="$CFLAGS -fPIC" PREFIX=/usr/ XCFLAGS="-DLUAJIT_ENABLE_LUA52COMPAT -DLUAJIT_NUMMODE=2"
+
 }
 
 package() {
 	cd $pkgname-$pkgver
-	make install $DESTDIR=$pkgdir PREFIX=/usr
+	bad --gmake gmake install PREFIX=/usr/ DESTDIR=$pkgdir
+	ln -sf libluajit-5.1.so.2.0.5 "$pkgdir/usr/lib/libluajit-5.1.so"
+	ln -sf libluajit-5.1.so.2.0.5 "$pkgdir/usr/lib/libluajit-5.1.so.2"
+
 }
 
 backup() {
@@ -25,5 +27,5 @@ backup() {
 
 license() {
 	cd $pkgname-$pkgver
-	cat COPYWRITE
+	cat COPYRIGHT
 }

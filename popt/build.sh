@@ -1,9 +1,9 @@
-pkgname=luarocks
-pkgver=3.11.1
+pkgname=popt
+pkgver=1.19
 comp=gz
 
 fetch() {
-	curl "https://luarocks.org/releases/luarocks-3.11.1.tar.gz" -LJo $pkgname-$pkgver.tar.$comp
+	curl "http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz" -o $pkgname-$pkgver.tar.$comp
 	tar -xf $pkgname-$pkgver.tar.$comp
 }
 
@@ -11,8 +11,11 @@ build() {
 	cd $pkgname-$pkgver
 	./configure \
 		--prefix=/usr \
-		--sysconfdir=/etc
-	bad --gmake gmake CFLAGS="$CFLAGS -fPIC"
+		--sysconfdir=/etc \
+		--build=$TRIPLE \
+		--host=$TRIPLE
+
+	make
 }
 
 backup() {
@@ -21,7 +24,7 @@ backup() {
 
 package() {
 	cd $pkgname-$pkgver
-	bad --gmake gmake install DESTDIR=$pkgdir
+	make install DESTDIR=$pkgdir
 }
 
 license() {

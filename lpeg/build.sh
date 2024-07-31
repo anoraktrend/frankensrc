@@ -11,7 +11,7 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgver
-	bad --gmake gmake CC=clang LIBTOOL=glibtool
+	bad --gmake gmake CC=clang LIBTOOL=glibtool CFLAGS="$CFLAGS -fPIC"
 }
 
 backup() {
@@ -21,7 +21,8 @@ backup() {
 package() {
 	cd $pkgname-$pkgver
 	install -d $pkgdir/usr/lib/lua/5.4/
-	install -c *.so $pkgdir/usr/lib/lua/5.4/
+	install -c lpeg.so $pkgdir/usr/lib/lua/5.4/
+	ln $pkgdir/usr/lib/lua/5.4/lpeg.so $pkgdir/usr/lib/liblpeg.so
 }
 
 license() {

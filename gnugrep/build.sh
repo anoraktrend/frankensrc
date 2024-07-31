@@ -1,21 +1,21 @@
-pkgver=4.4.1
-pkgname=gmake
+pkgver=3.11
+pkgname=gnu-grep
 pkgrel=1
 deps="musl"
 bad="gmake"
 auto_cross
 
 fetch() {
-	curl "https://ftp.gnu.org/gnu/make/make-$pkgver.tar.gz" -o $pkgname-$pkgver.tar.gz
+	curl "https://mirrors.kernel.org/gnu/grep/grep-3.11.tar.gz" -o $pkgname-$pkgver.tar.gz
 	tar -xf $pkgname-$pkgver.tar.gz
-	mv make-$pkgver $pkgname-$pkgver
+	mv grep-$pkgver $pkgname-$pkgver
 }
 
 build() {
 	cd $pkgname-$pkgver
-	./configure PATH="$PATH:/usr/bad/gmake/bin" \
+	./configure \
 		--prefix=/usr/bad/gmake \
-		--program-prefix=g \
+		--program-prefix= \
 		--disable-nls \
 		--build=$HOST_TRIPLE \
 		--host=$TRIPLE

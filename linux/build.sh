@@ -95,6 +95,11 @@ build() {
 
 	bad --gmake gmake CC=clang HOSTCC=clang YACC=yacc LLVM=1 LLVM_IAS=1 ARCH=$_arch "$config"
 
+	# x86_64 EFI stuff
+	./scripts/config -e CONFIG_FB_EFI
+	./scripts/config -e CONFIG_EFI_PARTITION
+	./scripts/config -e CONFIG_EFI
+
 	# nicer install name
 	./scripts/config -d CONFIG_LOCALVERSION
 	./scripts/config -d CONFIG_LOCALVERSION_AUTO

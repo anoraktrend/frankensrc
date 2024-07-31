@@ -10,6 +10,12 @@ fetch() {
 build() {
 	cd $pkgname-$pkgver
 	./configure \
+                --enable-libuuid \
+                --enable-blkid \
+                --enable-fsck \
+                --enable-vipw \
+                --enable-newgrp \
+                --enable-chfn-chsh \
 		--prefix=/usr \
 		--sysconfdir=/etc \
 		--build=$TRIPLE \

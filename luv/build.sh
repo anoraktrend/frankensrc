@@ -11,7 +11,7 @@ fetch() {
 
 build() {
 	cd $pkgname-$pkgver
-	bad --gmake gmake WITH_LUA_ENGINE=Lua INSTALL_PREFIX=/usr BUILD_SHARED_LIBS=ON BUILD_STATIC_LIBS=ON WITH_SHARED_LIBUV=ON
+	bad --gmake gmake INSTALL_PREFIX=/usr BUILD_SHARED_LIBS=ON BUILD_STATIC_LIBS=ON WITH_SHARED_LIBUV=ON CFLAGS="$CFLAGS -fPIC"
 }
 
 backup() {

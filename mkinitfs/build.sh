@@ -1,18 +1,15 @@
-pkgname=luarocks
-pkgver=3.11.1
+pkgname=mkinitfs
+pkgver=3.10.2
 comp=gz
 
 fetch() {
-	curl "https://luarocks.org/releases/luarocks-3.11.1.tar.gz" -LJo $pkgname-$pkgver.tar.$comp
+	curl "https://gitlab.alpinelinux.org/alpine/mkinitfs/-/archive/3.10.2/mkinitfs-3.10.2.tar.gz" -o $pkgname-$pkgver.tar.$comp
 	tar -xf $pkgname-$pkgver.tar.$comp
 }
 
 build() {
 	cd $pkgname-$pkgver
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc
-	bad --gmake gmake CFLAGS="$CFLAGS -fPIC"
+	bad --gmake gmake
 }
 
 backup() {
@@ -26,5 +23,6 @@ package() {
 
 license() {
 	cd $pkgname-$pkgver
+	cp ../../gpl-2.0.txt ./COPYING
 	cat COPYING
 }

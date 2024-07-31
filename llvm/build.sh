@@ -9,9 +9,9 @@ fetch() {
 	curl -L "https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver/llvm-project-$pkgver.src.tar.xz" -o $pkgname-$pkgver.tar.gz
 	tar -xf $pkgname-$pkgver.tar.gz
 	mv llvm-project-$pkgver.src $pkgname-$pkgver
-
+	cp ../fix-msan-with-musl.patch .
 	cd $pkgname-$pkgver
-	# patch -p1 < ../../riscv-relax.patch
+	patch -p0 < ../../fix-msan-with-musl.patch
 }
 
 build() {
@@ -55,7 +55,7 @@ build() {
 		-DLLVM_USE_HOST_TOOLS=OFF \
 		-DLLVM_VERSION_SUFFIX="" \
 		-DLLVM_APPEND_VC_REV=OFF \
-		-DLLVM_ENABLE_PROJECTS="all" \
+		-DLLVM_ENABLE_PROJECTS="openmp;clang;lld;llvm;libclc;compiler-rt" \
 		-DLLVM_ENABLE_LLD=ON \
 		-DLLVM_TARGETS_TO_BUILD="X86;AArch64;RISCV" \
 		-DLLVM_INSTALL_BINUTILS_SYMLINKS=ON \
@@ -116,9 +116,11 @@ build() {
 		-DCLANG_LINK_CLANG_DYLIB=ON \
 		-DCLANG_TOOLING_BUILD_AST_INTROSPECTION=ON \
 		-DCOMPILER_RT_USE_BUILTINS_LIBRARY=ON \
+		-DCOMPILER_RT_INSTALL_PATH=/usr/lib/clang/18 \
 		-DCOMPILER_RT_DEFAULT_TARGET_ONLY=OFF \
 		-DCOMPILER_RT_INCLUDE_TESTS=ON \
-		-DCOMPILER_RT_BUILD_SANITIZERS=OFF \
+		-DCOMPILER_RT_BUILD_SANITIZERS=ON \
+		-DCOMPILER_RT_BUILD_GWP_ASAN=OFF \
 		-DCOMPILER_RT_BUILD_XRAY=OFF \
 		-DCOMPILER_RT_BUILD_MEMPROF=OFF \
 		-DCOMPILER_RT_INCLUDE_TESTS=OFF \
