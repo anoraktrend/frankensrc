@@ -6,6 +6,7 @@ fetch() {
 	curl "https://www.lua.org/ftp/lua-$pkgver.tar.gz" -o $pkgname-$pkgver.tar.gz
 	tar -xf $pkgname-$pkgver.tar.gz
 	cp ../COPYING $pkgname-$pkgver
+	curl "https://codeberg.org/kiss-community/community/raw/branch/main/community/lua/files/lua.pc" -LJo $pkgname-$pkgver/lua.pc
 }
 
 build() {
@@ -18,7 +19,7 @@ build() {
 
 	make MYCFLAGS="$CFLAGS -fPIC" \
 	MYLDFLAGS="$LDFLAGS -fPIC" \
-	linux CC=cc
+	freebsd CC=cc
 }
 
 package() {
@@ -28,7 +29,6 @@ package() {
 	INSTALL_DATA="cp -P" \
 	install CC=cc
 	mkdir -p "$pkgdir/usr/lib/pkgconfig"
-	curl "https://codeberg.org/kiss-community/community/raw/branch/main/community/lua/files/lua.pc" -LJO
 	sed \
 	-e "s|%VER%|$pkver|" \
 	-e "s|%REL%|$pkgver|" \
