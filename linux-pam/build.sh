@@ -11,6 +11,8 @@ build() {
 	cd $pkgname-$pkgver
 	./configure \
 		--prefix=/usr \
+		--enable-static \
+		--enable-shared \
 		--build=x86_64-unknown-linux-musl \
 		--host=x86_64-unknown-linux-musl \
 		--libdir=/usr/lib \
