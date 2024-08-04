@@ -10,8 +10,8 @@ FrankenSRC uses many template files from iglunix/iglunix, for convinience. Most 
 ## Building Iglus
 I would recommend cloning this git repo into /opt/FrankenSRC and iglunix/iglunix into /opt/src.
 This provides a good seperation of the two repos. You should also generate your own RSA key using 
-openssl or ssh-keygen  FrankenSRC's iglus are all in one folder, so switch into whichever package
-folder you need to `cd` and:
+openssl or ssh-keygen. FrankenSRC's iglus are all in one folder, so switch into whichever package
+folder you need to with `cd` and:
 	
 <details>
    <summary>Maintain a local repository</summary>
